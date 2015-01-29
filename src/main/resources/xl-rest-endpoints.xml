@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+
+<endpoints xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/endpoints"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/endpoints endpoints.xsd">
+
+    <!--REST endpoints can be specified here. Each endpoint must be backed by a Jython script, where the standard XL Deploy services
+	 are automatically injected in Jython context by XL Deploy-->
+
+    <!-- Check src/main/python/cis.py to see what this endpoint does -->
+    <endpoint path="/jytutor" method="POST" script="restapi/jytutor.py" />
+
+</endpoints>
+

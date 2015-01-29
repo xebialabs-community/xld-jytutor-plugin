@@ -1,0 +1,49 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "nl.javadude.gradle.plugins:license-gradle-plugin:0.11.0"
+  }
+}
+
+
+version='1.0.0'
+
+def apiVersion = '4.0.1'
+
+apply plugin: "com.github.hierynomus.license"
+apply plugin: 'java'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven {
+      credentials {
+            username 'community-plugins'
+            password 'community'
+        }
+      url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
+    }
+}
+
+license {
+    header rootProject.file('src/main/license/xebialabs_community.license')
+    strictCheck true
+}
+
+task xlExtensionJar(type: Jar) {
+
+  from (sourceSets.main.output.classesDir)
+  
+  from("src/main/python") {
+    exclude '**/*$py.class'
+  }
+  from("src/main/resources")
+
+  into("web") {
+    from("src/main/web")
+  }
+}
+
+build.dependsOn(xlExtensionJar)

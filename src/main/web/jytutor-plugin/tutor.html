@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="tutor.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="tutor" ng-controller="TutorController" class="ng-cloak">
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<form role="form" ng-submit="submit()">
+				<div class="form-group">
+					 <label for="commands1">Commands:</label>
+      				 <textarea class="form-control" rows="5" id="commands1" ng-model="commands"></textarea>
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<label >HTTP RESPONSE STATUS: {{status}}</label>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+				<label for="stdout">Standard Output:</label>
+				<textarea class="form-control" rows="5" id="stdout">{{stdout}}</textarea>
+				<label for="stderr">Standard Error:</label>
+				<textarea class="form-control" rows="5" id="stderr">{{stderr}}</textarea>
+		</div>		
+		<div class="col-md-6 column">
+				<label for="exception">Exceptions:</label>
+				<textarea class="form-control" rows="5" id="exception">{{exception}}</textarea>
+				<label for="response">HTTP Request Body:</label>
+				<textarea class="form-control" rows="5" id="response">{{response}}</textarea>
+		</div>
+	</div>
+</div>
+</body>
+</html>
