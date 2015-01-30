@@ -23,3 +23,8 @@ cp ./build/libs/xld-jytutor-plugin-1.0.0.jar $XLD_HOME/plugins
 # Snapshot #
 
 ![Configuration] (/screenshot.png)
+
+
+# SAMPLE #
+
+You can actually refer to this [jython snippet](https://github.com/amitmohleji/XLDScripts/blob/master/exposeJythonVariables.py) to find out all the variables and methods exposed by jython services
