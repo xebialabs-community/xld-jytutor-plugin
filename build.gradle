@@ -15,14 +15,6 @@ def apiVersion = '4.0.1'
 apply plugin: "com.github.hierynomus.license"
 apply plugin: 'java'
 
-repositories {
-  mavenLocal()
-  mavenCentral()
-  maven {
-    url 'https://dist.xebialabs.com/public/maven2'
-  }
-}
-
 license {
     header rootProject.file('src/main/license/xebialabs_community.license')
     strictCheck true
