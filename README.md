@@ -24,7 +24,7 @@ cp ./build/libs/xld-jytutor-plugin-1.0.0.jar $XL*_HOME/plugins
 
 # Snapshot #
 
-![Configuration] (/screenshot.png)
+![Configuration](/screenshot.png)
 
 
 # SAMPLE #
