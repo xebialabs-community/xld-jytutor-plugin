@@ -1,5 +1,9 @@
 # Jython API Tutor/Helper Extension #
 
+[![GitHub All Releases](https://img.shields.io/github/downloads/xebialabs-community/xld-jytutor-plugin/total)](https://github.com/xebialabs-community/xld-jytutor-plugin/releases/latest)
+
+
+
 This helps in testing out jython commands that run directly in **XL Deploy** server. This is an easy way to learn jython API for building REST API Extensions and XL-Rules Jython Step scripting.
 
 
