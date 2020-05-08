@@ -47,3 +47,34 @@ ci.password = "mypass"
 repositoryService.create(ci.id, ci)
 
 ```
+
+### Another one ###
+```
+appBaseFolder = "Applications/namespaces"
+envBaseFolder = "Environments/k8s"
+
+namespace = "xl2"
+
+# Creating new Application
+ciType = Type.valueOf("udm.Application")
+app = metadataService.findDescriptor(ciType).newInstance("%s/%s" % (appBaseFolder, namespace))
+repositoryService.create(app.id,app)
+
+# Creating new Deployment Package
+ciType = Type.valueOf("udm.DeploymentPackage")
+dp = metadataService.findDescriptor(ciType).newInstance("%s/1.0" % app.id)
+repositoryService.create(dp.id,dp)
+
+# Creating new Namespace Spec
+ciType = Type.valueOf("k8s.NamespaceSpec")
+nsp = metadataService.findDescriptor(ciType).newInstance("%s/%s" % (dp.id, namespace))
+nsp.namespaceName = namespace
+repositoryService.create(nsp.id,nsp)
+
+ciType = Type.valueOf("udm.Environment")
+env = metadataService.findDescriptor(ciType).newInstance("%s/%s" % (envBaseFolder, namespace))
+env.members.add("Infrastructure/GKE")
+repositoryService.create(env.id,env)
+
+```
+
